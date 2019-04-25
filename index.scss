@@ -1,0 +1,31 @@
+.forms{
+  display: none;
+}
+.additional-txt{
+  display: none;
+}
+#form--0{
+display: block;
+}
+.first{
+/* display: block; */
+}
+
+@for $i from 0 to 20  {
+  #form--#{$i}:valid ~ #form--#{$i+1}{
+  display: block;
+  }
+  @for $j from 0 through 2 {
+    #answer--#{$j}:checked~#addition--#{$j}{
+      display: block;
+    }
+  }
+}
+
+// #form--1[style='display: block;'] + #form--0{
+// display: none;
+// }
+
+// #form--1:valid ~ #form--0{
+// display: none !important;
+// }
